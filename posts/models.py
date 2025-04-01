@@ -12,10 +12,16 @@ class Post(models.Model):
         crop=['middle', 'center'],
         upload_to='image/%Y/%m'
     )
+    # 작성자 
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL, 
         on_delete=models.CASCADE
         )
+    # 이글에 좋아요를 누른 사람
+    like_users = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        related_name='like_posts',
+    )
     
 
 class Comment(models.Model):
