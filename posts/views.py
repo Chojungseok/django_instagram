@@ -43,6 +43,7 @@ def comment_create(request, post_id):
         comment.save()
         return redirect('posts:index')
 
+@login_required
 def like(request, post_id):
     user = request.user
     post = Post.objects.get(id = post_id)
