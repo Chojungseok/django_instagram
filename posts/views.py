@@ -9,6 +9,7 @@ def index(reqeust):
     context = {
         'posts':posts,
     }
+    print(reqeust.POST)
     return render(reqeust, 'index.html', context)
 
 @login_required
