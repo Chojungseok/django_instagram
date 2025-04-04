@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-ir%4ow-y22ufg(kfjppxo8zxl8+s0xl+7i9wx7w^3xzy!24o4k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    # 장고 서버로 들어오기 위한 허용 도메인
+    '.compute.amazonaws.com',
+    '*',
+]
 
 
 # Application definition
